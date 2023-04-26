@@ -49,7 +49,6 @@ const Header = () => {
         )}
         <Link to="/" className="flex h-5 items-center">
           <img src={DesktopLogo} className="h-full hidden md:block " />
-          <img src={MobileLogo} className="h-full md:hidden" />
         </Link>
       </div>
       <div className="flex items-center">
