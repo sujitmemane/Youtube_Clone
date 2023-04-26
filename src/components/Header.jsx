@@ -10,7 +10,8 @@ import MyPhoto from "./../assets/my.jpg";
 import Loader from "../shared/Loader";
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const { loading, mobileMenu, setMobileMenu } = useContext(Context);
+  const { loading, mobileMenu, setMobileMenu, selectedCategory } =
+    useContext(Context);
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const pageName = pathname?.split("/")?.filter(Boolean)?.[0];
@@ -31,7 +32,7 @@ const Header = () => {
   const inputSearchHandler = (event) => {
     setSearchQuery(event.target.value);
   };
-  console.log(mobileMenu);
+  console.log(selectedCategory);
   return (
     <div className="sticky top-0 z-10 py-4 space-x-2 flex flex-row items-center justify-between h-14 px-4 md:px-5 bg-white dark:bg-black ">
       <div className="flex h-5 items-center md:space-x-2">
@@ -73,7 +74,13 @@ const Header = () => {
         </div>
       </div>
       <div className="flex items-center p-2 cursor-pointer">
-        <img src={MyPhoto} loading="lazy" className="h-10 w-10  rounded-full" />
+        <Link to="https://twitter.com/iAmSujitMemane" target="_blank">
+          <img
+            src={MyPhoto}
+            loading="lazy"
+            className="h-10 w-10  rounded-full"
+          />
+        </Link>
       </div>
     </div>
   );
