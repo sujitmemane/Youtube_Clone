@@ -49,6 +49,7 @@ const LeftNav = () => {
       <div className="flex flex-col px-5">
         {categories.map((item) => (
           <LeftNavMenuItem
+            key={Math.random()}
             title={item.type === "home" ? "Home" : item.name}
             icon={item.icon}
             action={() => clickHandler(item.name, item.type)}

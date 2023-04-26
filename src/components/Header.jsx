@@ -15,8 +15,7 @@ const Header = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const pageName = pathname?.split("/")?.filter(Boolean)?.[0];
-  console.log(pageName);
-  console.log(location);
+
   const searchQueryHandler = (e) => {
     if (
       (e?.key === "Enter" || e === "searchButton") &&

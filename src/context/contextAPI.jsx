@@ -28,7 +28,8 @@ export const AppContext = (props) => {
     };
     fetchData();
   };
-
+  console.log(searchResults);
+  console.log("fetched");
   return (
     <Context.Provider
       value={{
