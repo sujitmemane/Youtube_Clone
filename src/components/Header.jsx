@@ -38,7 +38,7 @@ const Header = () => {
         {pageName !== "video" && (
           <div
             onClick={mobileMenuToggle}
-            className="flex md:hidden md:mr-6 cursor-pointer items-center justify-center h-10 w-10 rounded-full hover:bg-white"
+            className="flex md:hidden md:mr-6 cursor-pointer items-center justify-center h-10 w-10 rounded-full hover:bg-[#303030]/[0.6]"
           >
             {mobileMenu ? (
               <CgClose className="text-white text-xl" color={"white"} />
