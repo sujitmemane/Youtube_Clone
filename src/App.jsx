@@ -1,10 +1,27 @@
+import { AppContext } from "./context/contextAPI";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-
+import Header from "./components/Header";
+import Feed from "./components/Feed";
+import SearchResults from "./components/SearchResults";
+import VideoDetails from "./components/VideoDetails";
 function App() {
   return (
-    <>
-      <h1 className="text-4xl">Sujit Memane</h1>
-    </>
+    <AppContext>
+      <BrowserRouter>
+        <div className="flex flex-col h-full">
+          <Header />
+          <Routes>
+            <Route path="/" exact element={<Feed />} />
+            <Route
+              path="/searchResult/:searchQuery"
+              element={<SearchResults />}
+            />
+            <Route path="/video/:id" element={<VideoDetails />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </AppContext>
   );
 }
 
