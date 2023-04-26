@@ -66,7 +66,7 @@ const Header = () => {
           </button>
         </div>
       </div>
-      <div className="flex items-center p-5 cursor-pointer">
+      <div className="flex items-center p-2 cursor-pointer">
         <img src={MyPhoto} className="h-10 w-10  rounded-full" />
       </div>
     </div>
