@@ -1,4 +1,5 @@
-const Base_URL = "https://youtube138.p.rapidapi.com";
+const Base_URL = "https://youtube-v38.p.rapidapi.com";
+
 const options = {
   params: {
     hl: "en",
@@ -6,7 +7,7 @@ const options = {
   },
   headers: {
     "X-RapidAPI-Key": "0efa9736f1msh6c766df2f328a27p172326jsn1bfddb811d07",
-    "X-RapidAPI-Host": "youtube138.p.rapidapi.com",
+    "X-RapidAPI-Host": "youtube-v38.p.rapidapi.com",
   },
 };
 
