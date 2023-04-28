@@ -8,7 +8,6 @@ export const AppContext = (props) => {
   const [searchResults, setSearchResults] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("New");
   const [mobileMenu, setMobileMenu] = useState(false);
-  console.log(searchResults);
 
   const fetchSelectedCategoryData = useCallback((query) => {
     setLoading(true);
@@ -16,7 +15,6 @@ export const AppContext = (props) => {
       try {
         const { contents } = await fetchDataFromAPI(`search/?q=${query}`);
         setSearchResults(contents);
-        console.log(contents);
       } catch (error) {
         console.error(error);
       } finally {

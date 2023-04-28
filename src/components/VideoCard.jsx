@@ -6,10 +6,10 @@ import VideoLength from "../shared/VideoLength";
 const VideoCard = ({ video }) => {
   const thum = video?.thumbnails[0]?.url;
   const avatar = video?.author?.avatar[0]?.url;
-  console.log(avatar);
+
   return (
     <Link to={`/video/${video.videoId}`}>
-      <div className="flex flex-col mb-8">
+      <div className="flex flex-col mb-8 cursor-pointer">
         <div className="relative h-48 md:h-40 md:rounded-xl overflow-hidden">
           <img
             className="h-full w-full object-cover"

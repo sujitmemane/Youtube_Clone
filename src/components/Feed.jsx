@@ -4,7 +4,6 @@ import { Context } from "../context/contextAPI";
 import VideoCard from "./VideoCard";
 const Feed = () => {
   const { loading, searchResults } = useContext(Context);
-  console.log(loading);
 
   return (
     <div className="flex flex-row h-[1200px]">
