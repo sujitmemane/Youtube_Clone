@@ -27,14 +27,14 @@ const VideoDetails = () => {
       const relatedData = await fetchDataFromAPI(
         `video/related-contents/?id=${id}`
       );
-      setRelatedVideo(relatedData);
+      setRelatedVideo(relatedData?.contents);
       setLoading(false);
     };
     fetchData();
     fetchRelatedData();
   }, [id]);
 
-  const avatar = video?.author?.avatar[0]?.url;
+  const avatar = video?.author?.avatar[1]?.url;
   const channelName = video?.author?.title;
   const subs = video?.author?.stats?.subscribersText;
   const likes = video?.stats?.likes;
@@ -44,11 +44,12 @@ const VideoDetails = () => {
   const description = video?.description;
 
   console.log(video);
+  console.log(relatedVideo);
 
   return (
     <div className="flex flex-row justify-center h-[calc(100%-56px)]  bg-black">
       <div className="w-full max-w-[1280px flex flex-col lg:flex-row">
-        <div className="flex flex-col lg:w-[calc(100%-350px)] xl:w-[calc(100%-400px)] px-4 py-3 lg:py-6 overflow-y-auto ">
+        <div className="flex flex-col lg:w-[calc(100%-200px)] xl:w-[calc(100%-350px)] px-4 py-3 lg:py-6 overflow-y-auto ">
           <div className="h-[200px] md:h-[400px] lg:[400px] xl:h-[550px] l-[-16px] lg:ml-0 mr-[-16px] lg:mr-0">
             <ReactPlayer
               url={`https://www.youtube.com/watch?v=${id}`}
@@ -86,9 +87,14 @@ const VideoDetails = () => {
           </div>
 
           <div className="text-white py-10 px-2 text-sm bg-[#2C3333] ">
-            <h1> Published on {datePub} </h1>
-            {description}
+            <h1 className="font-bold text-md"> Published on {datePub} </h1>
+            <p className="text-sm"> {description}</p>
           </div>
+        </div>
+        <div className="flex flex-col py-6 px-4 overflow-y-auto lg:w-[200px] xl:w-[350px]">
+          {relatedVideo?.map((item, index) => {
+            return <SuggestionCard key={index} video={item} />;
+          })}
         </div>
       </div>
     </div>
