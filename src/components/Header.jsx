@@ -27,7 +27,7 @@ const Header = () => {
   };
 
   const mobileMenuToggle = () => {
-    setMobileMenu((prev) => !prev);
+    setMobileMenu(!mobileMenu);
   };
   const inputSearchHandler = (event) => {
     setSearchQuery(event.target.value);
@@ -38,7 +38,7 @@ const Header = () => {
       {loading && <Loader />}
       <div className="sticky top-0 z-10 py-4 space-x-2 flex flex-row items-center justify-between h-14 px-4 md:px-5 bg-white dark:bg-black ">
         <div className="flex h-5 items-center md:space-x-2">
-          {pageName !== "video" && (
+          {pageName !== "video" && pageName !== "searchResults" && (
             <div
               onClick={mobileMenuToggle}
               className="flex md:hidden md:mr-6 cursor-pointer items-center justify-center h-10 w-10 rounded-full hover:bg-[#303030]/[0.6]"
@@ -52,6 +52,7 @@ const Header = () => {
           )}
           <Link to="/" className="flex h-5 items-center">
             <img src={DesktopLogo} className="h-full hidden md:block " />
+            <img src={MobileLogo} className="h-full block md:hidden " />
           </Link>
         </div>
         <div className="flex items-center">

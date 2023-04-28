@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { fetchDataFromAPI } from "../utils/api";
 import SearchResultCard from "./SearchResultCard";
 import { Context } from "../context/contextAPI";
-import LeftNav from "./LeftNav";
+
 const SearchResults = () => {
   const { setLoading } = useContext(Context);
   const [searchResults, setSearchResults] = useState();

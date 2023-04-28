@@ -1,6 +1,7 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { Context } from "../context/contextAPI";
 const LeftNavMenuItem = ({ className, action, icon, title }) => {
+  const { setMobileMenu } = useContext(Context);
   return (
     <div
       className={
@@ -9,7 +10,14 @@ const LeftNavMenuItem = ({ className, action, icon, title }) => {
       }
       onClick={action}
     >
-      <span className="text-xl mr-5">{icon}</span>
+      <h1
+        className="text-xl mr-5"
+        onClick={() => {
+          setMobileMenu(false);
+        }}
+      >
+        {icon}
+      </h1>
       {title}
     </div>
   );

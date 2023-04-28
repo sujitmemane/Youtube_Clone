@@ -61,9 +61,9 @@ const VideoDetails = () => {
           </div>
           <div className="text-white font-bold text-xl">{video?.title}</div>
           <div>
-            <div className="flex flex-row items-start my-2 space-x-2  justify-between p-4">
+            <div className="flex flex-col space-y-2 md:space-y-0  md:flex-row items-start my-2 md:space-x-2  justify-between p-4">
               <div className="flex  space-x-2 items-start">
-                <img src={avatar} className="rounded-full" />
+                <img src={avatar} className="rounded-full h-12 w-12" />
                 <div className="flex flex-col items-start  text-white">
                   <h1 className="font-bold text-md">{channelName} </h1>
                   <h2 className="text-[15px] lowercase">{subs}</h2>
