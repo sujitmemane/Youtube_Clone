@@ -42,8 +42,8 @@ const LeftNav = () => {
   };
   return (
     <div
-      className={`md:block w-[240px] overflow-y-auto h-full py-4 bg-black absolute md:relative z-10 translate-x-[-240px] md:translate-x-0 transition-all ${
-        mobileMenu ? "translate-x-2" : ""
+      className={`md:block w-[240px] z-100 overflow-y-auto h-full py-4 bg-black absolute md:relative z-10 translate-x-[-240px] md:translate-x-0 transition-all ${
+        mobileMenu ? "translate-x-1" : ""
       }`}
     >
       <div className="flex flex-col px-5">
@@ -53,6 +53,7 @@ const LeftNav = () => {
             title={item.type === "home" ? "Home" : item.name}
             icon={item.icon}
             action={() => clickHandler(item.name, item.type)}
+            
             className={`${
               selectedCategory === item.name ? "bg-white/[0.15]" : ""
             }`}

@@ -32,7 +32,7 @@ const Header = () => {
   const inputSearchHandler = (event) => {
     setSearchQuery(event.target.value);
   };
-
+  console.log(mobileMenu);
   return (
     <>
       {loading && <Loader />}
