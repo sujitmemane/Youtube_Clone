@@ -12,7 +12,7 @@ const SuggestionCard = ({ video }) => {
   return (
     <Link to={`/video/${id}`}>
       <div className="flex flex-col mb-8 cursor-pointer">
-        <div className="relative h-32 md:h-32 md:rounded-xl overflow-hidden">
+        <div className="relative h-48 md:h-40 md:rounded-xl overflow-hidden">
           <img
             className="h-full w-full object-cover"
             src={thumnail}
